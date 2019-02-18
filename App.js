@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import DetailsScreen from "./src/screens/detailsScreen";
 import HomeScreen from "./src/screens/homeScreen";
 import AddScreen from "./src/screens/addScreen";
-
 
 const AppNavigator = createStackNavigator(
   {
@@ -13,9 +11,18 @@ const AppNavigator = createStackNavigator(
     AddScreen
   },
   {
-    initialRouteName: "HomeScreen"
-  }
+    initialRouteName: "HomeScreen",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "#f4511e"
+      },
 
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        fontWeight: "bold"
+      }
+    }
+  }
 );
 
 export default createAppContainer(AppNavigator);
